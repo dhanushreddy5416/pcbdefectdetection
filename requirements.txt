@@ -3,5 +3,6 @@ ultralytics==8.0.170
 torch==2.1.0
 torchvision
 Pillow
+gdown
 pyyaml
 opencv-python-headless
