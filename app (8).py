@@ -5,7 +5,7 @@ from ultralytics import YOLO
 import os
 
 st.set_page_config(page_title="PCB Defect Detection", layout="wide")
-st.title("📦 PCB Defect Detection using YOLOv8")
+st.title("📦 PCB Defect Detection")
 
 # Use YOLO model in root folder
 YOLO_PATH = "yolov8s (1).pt"
@@ -33,7 +33,7 @@ if uploaded_file:
         font = ImageFont.load_default()
 
     # Run YOLO detection
-    results = yolo_model.predict(source=image, device="cpu", conf=0.25)
+    results = yolo_model.predict(source=image, device="cpu", conf=0.1)
     boxes = results[0].boxes
 
     if boxes is None or len(boxes) == 0:
