@@ -33,7 +33,7 @@ if uploaded_file:
         font = ImageFont.load_default()
 
     # Run YOLO detection
-    results = yolo_model.predict(source=image, device=0, conf=0.25)
+    results = yolo_model.predict(source=image, device="cpu", conf=0.25)
     boxes = results[0].boxes
 
     if boxes is None or len(boxes) == 0:
